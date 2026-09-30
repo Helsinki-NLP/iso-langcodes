@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "iso-langcodes"
+version = "1.0.1"
+description = "Python modules for working with language codes, language groups and language scripts"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Joerg Tiedemann", email = "tiedemann@cpan.org"}
+]
+keywords = ["language", "codes", "ISO", "639", "15924", "linguistics"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing :: Linguistic",
+]
+requires-python = ">=3.8"
+
+[project.urls]
+Homepage = "https://github.com/tiedemann/LanguageCodes"
+Repository = "https://github.com/tiedemann/LanguageCodes"
+
+[project.scripts]
+iso639 = "iso_langcodes.cli.iso639:main"
+langgroup = "iso_langcodes.cli.langgroup:main"
+langscript = "iso_langcodes.cli.langscript:main"
+langglottolog = "iso_langcodes.cli.langglottolog:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["iso_langcodes*"]
+
+[tool.setuptools.package-data]
+iso_langcodes = ["data/*.py"]
